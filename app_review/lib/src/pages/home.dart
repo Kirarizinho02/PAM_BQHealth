@@ -2,6 +2,7 @@ import 'package:app_review/src/components/general_appbar.dart';
 import 'package:app_review/src/components/title_imc.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:app_review/src/components/form_imc.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,40 +12,25 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: generateAppBar,
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-          Container(
-              width: double.infinity,
-              height: 100,
-              decoration: decorationContainerTitle,
-              child: const Center(
-                child: TitleIMC(),
-              )),
-          Container(
-              width: double.infinity,
-              decoration:
-                  BoxDecoration(border: Border.all(), color: Colors.orange),
-              child: Column(
-                children: [
-                  TextFormField(
-                    decoration:
-                        const InputDecoration(hintText: ' Digite seu peso'),
-                  )
-                ],
-              )),
-          Container(
-              width: double.infinity,
-              decoration: decorationContainerInput,
-              child: Column(
-                children: [
-                  TextFormField(
-                    decoration:
-                        const InputDecoration(hintText: ' Digite sua altura'),
-                  )
-                ],
-              )),
-        ]),
-      ),
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                  width: double.infinity,
+                  height: 100,
+                  decoration: decorationContainerTitle,
+                  child: const Center(
+                    child: TitleIMC(),
+                  )),
+              Container(
+                  width: double.infinity,
+                  height: 400,
+                  child: const Center(
+                    child: FormIMC(),
+                  ))
+            ],
+          )),
     );
   }
 }
