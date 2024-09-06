@@ -1,10 +1,13 @@
 import 'package:app_review/src/components/classification.dart';
+import 'package:app_review/src/components/ideal_weight.dart';
 import 'package:flutter/material.dart';
 
 TextEditingController pesoController = TextEditingController();
 TextEditingController alturaController = TextEditingController();
 late double imc;
 late String imcImprimir;
+double altura = 0;
+double peso = 0;
 
 class FormIMC extends StatefulWidget {
   const FormIMC({super.key});
@@ -24,15 +27,18 @@ class _FormExampleState extends State<FormIMC> {
   }
 
   void calcIMC() {
-    double peso =
-        double.tryParse(pesoController.text.replaceAll(",", ".")) ?? 0;
-    double altura =
-        double.tryParse(alturaController.text.replaceAll(",", ".")) ?? 0;
+    peso = double.tryParse(pesoController.text.replaceAll(",", ".")) ?? 0;
+    altura = double.tryParse(alturaController.text.replaceAll(",", ".")) ?? 0;
 
     double imc = peso / (altura * altura);
+    String imcFixed = imc.toStringAsFixed(2);
+
+    if (imc.toInt() == 0) {
+      imcImprimir = ("");
+    }
 
     setState(() {
-      imcImprimir = ("imc: $imc");
+      imcImprimir = ("Seu IMC é: $imcFixed");
     });
   }
 
@@ -74,15 +80,14 @@ class _FormExampleState extends State<FormIMC> {
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
                   calcIMC();
-                  setState(() {
-                    Classification(calcIMC());
-                  });
                 }
               },
               child: const Text('Enviar'),
             )),
           ),
-          Text(imcImprimir)
+          Text(imcImprimir),
+          Classification(imc: imc),
+          IdealWeight(altura: altura),
         ],
       ),
     );
