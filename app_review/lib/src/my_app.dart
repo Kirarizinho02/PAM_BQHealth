@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'; 
+import 'package:flutter/material.dart'; //Importação do pacote de widgets e temas do flutter
 import 'package:app_review/src/pages/home.dart'; //Importa o arquivo home.dart para usar dentro da construção do widget
 
 class MyApp extends StatelessWidget { //Define a classe MyApp como um stateless widget (não muda ao longo do tempo)
