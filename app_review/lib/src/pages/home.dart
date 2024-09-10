@@ -1,7 +1,7 @@
 import 'package:app_review/src/components/general_appbar.dart'; //Importa o arquivo general_appbar.dart para usar dentro da construção do widget
 import 'package:app_review/src/components/title_imc.dart'; //Importa o arquivo title_imc.dart para usar dentro da construção do widget
 import 'package:app_review/src/components/form_imc.dart'; //Importa o arquivo form_imc.dart para usar dentro da construção do widget
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; //Importação do pacote de widgets e temas do flutter
 
 
 class Home extends StatelessWidget { //Define a classe home como um stateless widget
