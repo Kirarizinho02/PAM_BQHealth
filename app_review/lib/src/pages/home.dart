@@ -1,6 +1,5 @@
 import 'package:app_review/src/components/general_appbar.dart';
 import 'package:app_review/src/components/title_imc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app_review/src/components/form_imc.dart';
 
